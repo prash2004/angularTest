@@ -1,0 +1,24 @@
+.square-textbox {
+  width: 50px; /* Width of each textbox */
+  height: 50px; /* Height of each textbox, making it square */
+  padding: 1px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.dark-border-right {
+  border-right: 3px solid #000;
+}
+
+.dark-border-left {
+  border-left: 3px solid #000;
+}
+
+
+.dark-border-top {
+  border-top: 3px solid #000;
+}
+
+.dark-border-bottom {
+  border-bottom: 3px solid #000;
+}

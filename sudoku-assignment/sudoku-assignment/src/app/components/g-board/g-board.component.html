@@ -1,0 +1,33 @@
+<div *ngIf="boardData">
+  <div class="d-flex flex-column justify-content-center">
+
+    <div class="p-1">
+      <div *ngFor="let rowItem of boardData.board;let rowIndex = index">
+        <div class="d-flex flex-column">
+          <div class="d-flex flex-row">
+            <div *ngFor="let columnItem of rowItem;let columnIndex = index"
+              [class.dark-border-top]="rowIndex===0"
+              [class.dark-border-left]="columnIndex===0"
+              [class.dark-border-bottom]="needsDarkBorder(rowIndex)"
+              [class.dark-border-right]="needsDarkBorder(columnIndex)">
+              <input type="number" min="1" max="9" [value]="columnItem==0?null:columnItem" [disabled]="columnItem!=0"
+                (change)="setCurrentItemValue($event,rowIndex,columnIndex)" class="square-textbox">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-1">
+      <div class="d-flex flex-row">
+        <!-- <div class="py-1">
+          <button type="button" class="btn btn-secondary" (click)="showBoardData();">Show</button>
+        </div> -->
+        <!-- <div class="p-1">
+          <button type="button" class="btn btn-secondary" (click)="resetBoard();">Reset</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+</div>

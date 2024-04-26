@@ -1,0 +1,48 @@
+<div class="d-flex flex-column">
+  <div class="p-2">
+    <div class="d-flex flex-row">
+
+      <div class="p-1">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownDifficultyLevel"
+          #dropdownDifficultyLevel data-bs-toggle="dropdown" aria-expanded="false">
+          Select Difficulty
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownDifficultyLevel">
+          <li *ngFor="let level of difficultyLevels">
+            <a class="dropdown-item" (click)="onSelectDifficulty(level)">{{ level.text }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="p-1">
+        <button type="button" class="btn btn-primary" (click)="loadPuzzle()">Load
+          Game</button>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="p-2">
+    <app-g-board [boardData]="currentBoardData"></app-g-board>
+
+  </div>
+  <div class="p-2">
+
+    <div class="d-flex flex-row" *ngIf="currentBoardData">
+     
+      <div class="p-1">
+        <button type="button" class="btn btn-primary" (click)="validatePuzzle()">Validate</button>
+
+      </div>
+      <div class="p-1">
+        <button type="button" class="btn btn-secondary" (click)="solvePuzzle()">Solve</button>
+      </div>
+      <div class="p-1 ">
+        <span>
+          Status: {{currentStatus}}
+        </span>
+      </div>
+    </div>
+
+
+  </div>
+</div>
